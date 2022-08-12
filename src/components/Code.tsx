@@ -31,13 +31,11 @@ class Code extends React.Component<any,IState> {
             lineColorMin: 40,
             lineColorMax: 180,
             contentWidth: 96,
-            contentHeight: 38,
-        } 
-        
-        
+            contentHeight: 45,
+        }     
     }
     componentDidMount(){ 
-        this.drawPic()
+        this.reloadPic()
     }
     //生成随机数
     randomNum = (min:number,max:number)=>{
@@ -89,7 +87,9 @@ class Code extends React.Component<any,IState> {
     //重新加载验证码
     reloadPic=()=>{
         this.drawPic()
-
+        return ()=>{
+            this.props.onGetCode(this.state.code)
+        }
     }
     //检验验证码
    /* checkCode = () :void=>{
@@ -130,11 +130,10 @@ class Code extends React.Component<any,IState> {
                     id="canvas"
                     onClick={this.reloadPic}
                     width = '100'
-                    height = '40'                    
+                    height = '45'                    
                 >
                 </canvas>
             </div>
-
         )
     }
 

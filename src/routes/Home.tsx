@@ -1,5 +1,5 @@
 import React from "react"
-import "../assets/less/home.css"
+import "../assets/scss/home.scss"
 import {Link} from "react-router-dom"
 import Footer from "../components/Footer"
 import logo from "../assets/logo.jpg"

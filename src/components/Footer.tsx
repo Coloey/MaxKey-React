@@ -1,6 +1,6 @@
 import React from "react"
 import {ReactComponent as C} from "../assets/svg/C.svg"
-import  "../assets/less/footer.css"
+import  "../assets/scss/footer.scss"
 export default function Footer(){
     return (
         <footer>
