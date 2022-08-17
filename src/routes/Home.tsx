@@ -16,7 +16,7 @@ export default function Home() {
                     <span>Key</span>
                     单点登录认证系统
                 </div>
-                <Link to="/signforce/logout">
+                <Link to="/passport/logout">
                 <Quit className="quit"></Quit>
                 </Link>
                 
