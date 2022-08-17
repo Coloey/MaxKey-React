@@ -25,7 +25,7 @@ root.render(
       <Route path="home" element={<AppList/>}></Route>
       <Route path="user" element={<User/>}></Route>
     </Route>
-    <Route path="/signforce/logout" element={<Logout/>}></Route>
+    <Route path="/passport/logout" element={<Logout/>}></Route>
     <Route path="*" element={<NotFoundPage/>}></Route>
   </Routes>
   </BrowserRouter>
