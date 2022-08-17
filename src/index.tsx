@@ -9,6 +9,8 @@ import Home from "./routes/Home"
 import User from "./routes/User"
 import Forgot from "./routes/Forgot"
 import AppList from './routes/AppList';
+import Logout from "./routes/Logout"
+import NotFoundPage from "./routes/NotFoundPage"
 import "antd/dist/antd.min.css"
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -23,6 +25,8 @@ root.render(
       <Route path="home" element={<AppList/>}></Route>
       <Route path="user" element={<User/>}></Route>
     </Route>
+    <Route path="/signforce/logout" element={<Logout/>}></Route>
+    <Route path="*" element={<NotFoundPage/>}></Route>
   </Routes>
   </BrowserRouter>
 );

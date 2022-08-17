@@ -131,10 +131,16 @@ export const api ={
         }
         )
     },
+    logout(){
+        Cookies.remove(CONSTS.CONGRESS)
+        return axios.get('/login/logout')
+
+    },
     //清除token
     clear(){
         Cookies.set('token','')
         localStorage.setItem(CONSTS.REMEMBER,'')
-    },   
+    },  
+
     
 }

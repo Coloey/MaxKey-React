@@ -329,7 +329,7 @@ const qrScanDingtalk=(data: any)=> {
                 <span>其他登录方式</span>
               {
                 providers.map((prod:any)=>
-                  <img src= {prod.icon} alt="" onClick={()=>socialauth(prod.provider)} />
+                  <img src= {prod.icon} alt="" onClick={()=>socialauth(prod.provider)} key={prod.id}/>
                 )
               }
               </>

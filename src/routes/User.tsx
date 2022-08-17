@@ -1,6 +1,7 @@
 /* eslint-disable no-template-curly-in-string */
 import React,{useEffect,useState}  from "react"
 import {Button,Form,Input,Select,message,Spin} from 'antd'
+import useSyncCallback from "../hook/useSyncCallback"
 import {AxiosResponse,AxiosError} from "axios"
 import {api} from "../utils/api"
 import "../assets/scss/user.scss"
@@ -11,7 +12,7 @@ const validateMessages = {
       number: '${label} is not a valid number!',      
     },
   };
-export default function User () {
+export default function User() {
     const [form] =Form.useForm()
     //let formValue = useRef(null)
     const [formjson,setFormJson] = useState({})
@@ -34,13 +35,18 @@ export default function User () {
         })
         
     }
+   const func= useSyncCallback(()=>{
+        console.log(formjson)
+        form.resetFields()
+        setLoading(false) 
+   })
+    
     useEffect(()=>{
         api.getProfile()
-        .then((response:AxiosResponse)=>{
-            //console.log(res.data)
+        .then((response:AxiosResponse)=>{           
             const res=response.data
-            if(res.code===0){       
-                setFormJson({       
+            if(res.code===0){ 
+                setFormJson({
                     familyName:res.data.familyName,
                     middleName:res.data.middleName,
                     givenName : res.data.givenName,
@@ -48,9 +54,8 @@ export default function User () {
                     idCardNo : res.data.idCardNo,
                     preferredLanguage : res.data.preferredLanguage,
                     webSite : res.data.webSite,
-                }) 
-                form.resetFields()
-                setLoading(false)                                
+                })
+                func();                              
             }
         })
         .catch((err:AxiosError)=>{

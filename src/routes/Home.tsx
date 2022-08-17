@@ -3,21 +3,23 @@ import "../assets/scss/home.scss"
 import {Link} from "react-router-dom"
 import Footer from "../components/Footer"
 import logo from "../assets/logo.jpg"
+import {ReactComponent as Quit} from "../assets/svg/quit.svg"
 import {Outlet} from "react-router-dom"
 export default function Home() {   
-    // const [current,setCurrent] = useState<Number>(1)
-    // const handleTab=(index:number):void=>{
-    //     setCurrent(index)
-    // }
+    
     return (
         <div className="body">
-            <header>
+            <header className="header">
                 <div className= 'title'>
                     <img src={logo} alt="" />
                     Max
                     <span>Key</span>
                     单点登录认证系统
                 </div>
+                <Link to="/signforce/logout">
+                <Quit className="quit"></Quit>
+                </Link>
+                
             </header>
             <div className="nav">    
                 <ul>

@@ -35,7 +35,7 @@ export default function AppList(){
         <Spin spinning={loading}>
             <ul>           
             {appList.length>0&&appList.map((app:any)=>
-                <li onClick={(e)=>onAuthz(e,app.id)}><img src={app.iconBase64} alt=""/></li>
+                <li onClick={(e)=>onAuthz(e,app.id)} key={app.id}><img src={app.iconBase64} alt=""/></li>
             )}        
             </ul>
         </Spin>
