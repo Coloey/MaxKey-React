@@ -10,6 +10,7 @@ import User from "./routes/User"
 import Forgot from "./routes/Forgot"
 import AppList from './routes/AppList';
 import Logout from "./routes/Logout"
+import JwtAuth from './routes/Jwt-auth';
 import NotFoundPage from "./routes/NotFoundPage"
 import "antd/dist/antd.min.css"
 const root = ReactDOM.createRoot(
@@ -26,6 +27,7 @@ root.render(
       <Route path="user" element={<User/>}></Route>
     </Route>
     <Route path="/passport/logout" element={<Logout/>}></Route>
+    <Route path="/passport/jwt/auth" element={<JwtAuth/>}></Route>
     <Route path="*" element={<NotFoundPage/>}></Route>
   </Routes>
   </BrowserRouter>

@@ -60,6 +60,9 @@ export const api ={
 
 
     },
+    jwtAuth(authParam: any){
+        return axios.get(`/login/jwt/trust?_allow_anonymous=true`, authParam)
+    },
     //重定向地址
     navigate(authJwt:any){
         if(localStorage.getItem(CONSTS.REDIRECT_URI) != null){
